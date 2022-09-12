@@ -12,7 +12,7 @@ def lambda_handler(event, context):
 	transactionToUpload['amount'] = 20
 	transactionToUpload['customerId'] = 'CID-11111'
 
-	fileName = 'CID-11111' + '.json'
+	fileName = 'CID-12' + '.json'
 
 	uploadByteStream = bytes(json.dumps(transactionToUpload).encode('UTF-8'))
 
