@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     transactionToUpload['id'] = event['id']
     transactionToUpload['name'] = event['name']
     transactionToUpload['email'] = event['email']
-    fileName = 'DataFromLambda' + '.json'
+    fileName = event['id'] + '.json'
     uploadByteStream = bytes(json.dumps(transactionToUpload).encode('UTF-8'))
     s3.put_object(Bucket=bucket, Key=fileName, Body=uploadByteStream)
     print('Put Complete')
